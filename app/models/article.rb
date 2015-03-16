@@ -73,11 +73,13 @@ class Article < Content
 
   def merge_with(id)
     article2 = Article.find_by_id(id)
-    self.body += article2.body
-    if !(article2.comments.empty?)
-      self.comments += article2.comments
+    if article2 != nil
+      self.body += article2.body
+      if !(article2.comments.empty?)
+        self.comments += article2.comments
+      end
+      self.save!
     end
-    self.save!
   end
 
   def set_permalink

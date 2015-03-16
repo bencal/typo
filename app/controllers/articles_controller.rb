@@ -15,7 +15,6 @@ class ArticlesController < ContentController
   def merge
     article1 = Article.find_by_id(params[:id])
     article1.merge_with(params[:merge_with])
-    #article1.save!
     redirect_to :controller => 'admin/content', :action => "index"
   end
 
