@@ -5,7 +5,7 @@
 
 <% end %>
 <% if current_user.name == 'admin' && !(@article.id.nil?) %>
-  <%= form_tag(:controller => "articles", :action => "merge", :id => @article.id) do %>
+  <%= form_tag(article_merge_path(@article.id)) do %>
     <div class=''>
       <h3><%= _("Merge Articles") %></h3>
       <%= "Article ID" %>
