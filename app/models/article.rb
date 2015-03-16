@@ -80,9 +80,10 @@ class Article < Content
           comment.article = self
           comment.save!
         end
+        self.comments += article2.comments
       end
       self.save!
-      #article2.destroy
+      article2.destroy
     end
   end
 
