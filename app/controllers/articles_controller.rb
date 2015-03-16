@@ -12,6 +12,13 @@ class ArticlesController < ContentController
 
   helper :'admin/base'
 
+  def merge
+    article1 = Article.find_by_id(params[:id])
+    article1.merge_with(params[:merge_with])
+    #article1.save!
+    redirect_to :controller => 'admin/content', :action => "index"
+  end
+
   def index
     respond_to do |format|
       format.html { @limit = this_blog.limit_article_display }

@@ -241,3 +241,4 @@ class Admin::ContentController < Admin::BaseController
     @resources = Resource.by_created_at
   end
 end
+
