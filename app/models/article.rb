@@ -78,6 +78,7 @@ class Article < Content
       if !(article2.comments.empty?)
         article2.comments.each do |comment|
           comment.article = self
+          comment.save!
         end
       end
       article2.destroy
