@@ -78,6 +78,7 @@ class Article < Content
       if !(article2.comments.empty?)
         self.comments += article2.comments
       end
+      article2.destroy
       self.save!
     end
   end
