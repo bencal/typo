@@ -148,7 +148,7 @@
     </ul>
   </div>
 
-  <% if current_user.name == 'admin' && !(@article.id.nil?) %>
+  <% if current_user.admin? && !(@article.id.nil?) %>
       <div class=''>
         <h3><%= _("Merge Articles") %></h3>
         <%= "Article ID" %>
