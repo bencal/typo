@@ -75,16 +75,14 @@ class Article < Content
     article2 = Article.find_by_id(id)
     if article2 != nil
       self.body += article2.body
-      self.extended += article2.extended
       if !(article2.comments.empty?)
         article2.comments.each do |comment|
           comment.article = self
-          self.comments += comment
           comment.save!
         end
       end
       self.save!
-      article2.destroy
+      #article2.destroy
     end
   end
 
