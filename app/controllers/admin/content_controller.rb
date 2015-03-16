@@ -171,9 +171,8 @@ class Admin::ContentController < Admin::BaseController
       if params[:merge_with] != nil
         article1 = Article.find_by_id(params[:id])
         article1.merge_with(params[:merge_with])
-        redirect_to :action => "index"
-        return
-      elsif @article.save
+      end
+      if @article.save
         destroy_the_draft unless @article.draft
         set_article_categories
         set_the_flash
