@@ -82,6 +82,7 @@ class Article < Content
           comment.save!
         end
       end
+      self.save!
       article2.destroy
     end
   end
