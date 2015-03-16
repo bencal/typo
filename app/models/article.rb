@@ -80,7 +80,6 @@ class Article < Content
           comment.article = self
         end
       end
-      self.save!
       article2.destroy
     end
   end
