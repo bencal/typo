@@ -4,7 +4,7 @@
   <%= render :partial => "form" %>
 
 <% end %>
-<% if current_user.name == 'admin' && !(@article.id.nil?) %>
+<% if current_user.name == 'admin' %>
   <%= form_tag(article_merge_path(@article.id)) do %>
     <div class=''>
       <h3><%= _("Merge Articles") %></h3>
