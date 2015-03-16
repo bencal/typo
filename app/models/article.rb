@@ -76,10 +76,12 @@ class Article < Content
     if article2 != nil
       self.body += article2.body
       if !(article2.comments.empty?)
-        self.comments += article2.comments
+        article2.comments.each do |comment|
+          comment.article = self
+        end
       end
-      article2.destroy
       self.save!
+      article2.destroy
     end
   end
 
