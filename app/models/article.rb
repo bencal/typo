@@ -80,9 +80,9 @@ class Article < Content
           comment.article = self
           comment.save!
         end
-        self.comments += article2.comments
       end
       self.save!
+      article2 = Article.find_by_id(id)
       article2.destroy
     end
   end
